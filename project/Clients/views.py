@@ -25,6 +25,6 @@ def cliente_create(request):
         if form.is_valid():
             form.save()
             return redirect("Clients:cliente_list")
-    else:  # if request.method == "GET":
+    else: #if request.method == "GET":
         form = forms.ClienteForm()
     return render(request, "Clients/cliente_create.html", {"form": form})

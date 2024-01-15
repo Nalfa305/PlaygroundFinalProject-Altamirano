@@ -13,6 +13,7 @@ class Pais(models.Model):
 
 
 class Cliente(models.Model):
+    DATE_FORMAT = 'd/m/Y'
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     nacimiento = models.DateField(null=True, blank=True)
