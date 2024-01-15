@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Coderhouse | Inicio    
+{% endblock title %}
+    
+
+{% block content %}
+    <h1>Proyecto Final</h1>
+    <h2>INICIO</h2>
+
+    <button><a href="{% url 'cliente:index' %}">Cliente</a></button>
+    <button><a href="{% url 'admin:index' %}">Administración</a></button>
+{% endblock content %}
