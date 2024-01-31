@@ -7,9 +7,10 @@ class Pais(models.Model):
     def __str__(self) -> str:
         return self.nombre
 
-    class Meta:
-        verbose_name = "país"
-        verbose_name_plural = "países"
+
+  #  class Meta:
+ #       verbose_name = "Country"
+#        verbose_name_plural = "países"
 
 
 class Cliente(models.Model):

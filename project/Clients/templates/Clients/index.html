@@ -10,9 +10,11 @@
 <h2>CLIENTE</h2>
 
     <div>
-        <button><a href="{% url 'cliente:pais_list' %}">Lista de países</a></button>
-        <button><a href="{% url 'cliente:cliente_list' %}">Lista de clientes</a></button>
+
+        <button><a href="{% url 'cliente:pais_list' %}">Country List</a></button>
+        <button><a href="{% url 'cliente:cliente_list' %}">Client List</a></button>
         <button><a href="{% url 'cliente:cliente_create' %}">Crear cliente</a></button>
+
     </div>
     <div>
         <button><a href="{% url 'core:index' %}">Inicio</a></button>    
