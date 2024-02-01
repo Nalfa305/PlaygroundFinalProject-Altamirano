@@ -96,114 +96,21 @@
                 </div>
                 <!-- Side widgets-->
                 <div class="col-lg-4">
-                    <div class="card mb-4">
-                        <div class="card-header text-center">YOU ARE NEW HERE? COME AND JOIN US!!</div>
-                        <div class="card-body text-center">
-                            <a href="{% url 'cliente:cliente_create' %}">SIGN IN HERE!</a>
-                        </div>
-                    </div>
+                   
+                    {% include 'core/widgets.html' with Title="NEW HERE? COME AND JOIN US!!" Link="cliente:cliente_create" Text="SIGN IN HERE!" %}
+                   
                     <!-- Search widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Search</div>
-                        <div class="card-body">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Categories widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Categories</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="category-list">
-                                        <li>
-                                            Men's Clothing:
-                                                <ul class="subcategory-list"> 
-                                                    <li><a href="#!">Casual Wear</a></li>
-                                                    <li><a href="#!">Formal Wear</a></li>
-                                                    <li><a href="#!">Activewear</a></li>
-                                                    <li><a href="#!">Outerwear</a></li>
-                                                    <li><a href="#!">Accessories</a></li>
-                                                </ul>
-                                        </li>
-                                        <li>
-                                            Women's Clothing:
-                                                <ul class="subcategory-list"> 
-                                                    <li><a href="#!">Dresses</a></li>
-                                                    <li><a href="#!">Tops</a></li>
-                                                    <li><a href="#!">Bottoms</a></li>
-                                                    <li><a href="#!">Activewear</a></li>
-                                                    <li><a href="#!">Outerwear</a></li>
-                                                    <li><a href="#!">Accessories</a></li>
-                                                </ul>
-                                        </li>
-                                        <li>
-                                            Kid's Clothing:
-                                                <ul class="subcategory-list"> 
-                                                    <li><a href="#!">Boy´s Apparel</a></li>
-                                                    <li><a href="#!">Girl´s Apparel</a></li>
-                                                    <li><a href="#!">Bbay Clothing</a></li>
-                                                </ul>
-                                        </li>                                  
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            Footwear:
-                                                <ul class="subcategory-list"> 
-                                                    <li><a href="#!">Men´s Shoes</a></li>
-                                                    <li><a href="#!">Women´s Shoes</a></li>
-                                                    <li><a href="#!">Kid´s Shoes</a></li>
-                                                    <li><a href="#!">Athletic Shoes</a></li>
-                                                    <li><a href="#!">Sandals</a></li>
-                                                </ul>
-                                        </li>
-                                        <li>
-                                            Seasonal Collections:
-                                                <ul class="subcategory-list"> 
-                                                    <li><a href="#!">Spring/Summer Collection</a></li>
-                                                    <li><a href="#!">Fall/Winter Collection</a></li>
-                                                    <li><a href="#!">Holiday Specials</a></li>
-                                                </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Side widget-->
-                    <div class="card mb-4">
-                        <div class="card-header text-center">SOME TIPS!</div>
-                        <div class="card-body">
-                            <div class="fw-bold">Mix and Match Textures:</div>
-                            <p>Experiment with textures to add depth and interest to your outfit. Pair a sleek leather jacket with a flowy chiffon skirt or denim with a cozy knit. Mixing textures elevates your look and creates visual intrigue.</p>
-                            <div class="fw-bold">Accessorize Strategically:</div>
-                            <p>Accessorizing is an art. Instead of overloading with accessories, focus on a few key pieces that complement your outfit. A statement necklace, bold sunglasses, or a chic belt can transform a simple look into a fashion statement.</p>
+                    {% include 'core/search.html'%}
 
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header text-center">CONTACT US!</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <img class="img-fluid rounded" src="{% static 'core/img/Logo.ico' %}" alt="..." />
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="fw-bold">Whatsapp:</div>
-                                    <a class="btn btn-success" href="https:/wa.me/59899345746" target="_blank">WhatsApp</a>
-                                    <div class="fw-bold">Instagram:</div>
-                                    <a class="btn btn-success" href="https://www.instagram.com/DestinyFashion305/" target="_blank">Instagram</a>
-                                    <div class="fw-bold">Twitter/X:</div>
-                                    <a class="btn btn-success" href="https://twitter.com/DestinyFashion305" target="_blank">Twitter/X</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Categories widget-->
+                    {% include 'core/cloth.html'%}
+
+                    <!-- Side widget - Extra Info-->
+                    {% include 'core/widgets.html' with Title='wwww' Sub1='Mix and Match Textures:' Par1='Experiment with textures to add depth and interest to your outfit. Pair a sleek leather jacket with a flowy chiffon skirt or denim with a cozy knit. Mixing textures elevates your look and creates visual intrigue.' Sub2='Accessorize Strategically:' Par2='Accessorizing is an art. Instead of overloading with accessories, focus on a few key pieces that complement your outfit. A statement necklace, bold sunglasses, or a chic belt can transform a simple look into a fashion statement.'%}
+                   
+                    <!-- Side widget - Contact-->
+                    {% include 'core/contact.html'%}
+
                 </div>
             </div>
         </div>

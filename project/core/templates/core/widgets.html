@@ -1,0 +1,20 @@
+<div class="card mb-4">
+    <div class="card-header text-center">{{ Title }}</div>
+    <div class="card-body text-center">
+
+        <div class="fw-bold">{{Sub1}}</div>
+        <p>{{Par1}}</p>
+        <div class="fw-bold">{{Sub2}}</div>
+        <p>{{Par2}}</p>
+        <div class="fw-bold">{{Sub3}}</div>
+        <p>{{Par3}}</p>
+        <div class="fw-bold">{{Sub4}}</div>
+        <p>{{Par4}}</p>
+
+
+        {% if Link %}
+            <a href="{% url Link %}">{{Text}}</a>
+        {% endif %}
+    </div>
+</div>
+

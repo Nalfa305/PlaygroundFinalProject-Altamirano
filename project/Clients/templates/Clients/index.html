@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    Cliente | Inicio
+    Client | Home
 {% endblock title %}
 
 
@@ -13,11 +13,11 @@
 
         <button><a href="{% url 'cliente:pais_list' %}">Country List</a></button>
         <button><a href="{% url 'cliente:cliente_list' %}">Client List</a></button>
-        <button><a href="{% url 'cliente:cliente_create' %}">Crear cliente</a></button>
+        <button><a href="{% url 'cliente:cliente_create' %}">Create client</a></button>
 
     </div>
     <div>
-        <button><a href="{% url 'core:index' %}">Inicio</a></button>    
+        <button><a href="{% url 'core:index' %}">Home</a></button>    
     </div>
     
 {% endblock content %}
