@@ -8,9 +8,10 @@ class Pais(models.Model):
         return self.nombre
 
 
-  #  class Meta:
- #       verbose_name = "Country"
-#        verbose_name_plural = "países"
+
+    class Meta:
+        verbose_name = "Country"
+        verbose_name_plural = "Countries"
 
 
 class Cliente(models.Model):
