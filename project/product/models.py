@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-import os
+
 
 class ProductCategory(models.Model):
     
@@ -54,6 +54,14 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name} ({self.size}) ${self.price:.2f}"
+
+    def search(self, request):
+        if request.GET.get("search"):
+            search = request.GET.get("search")
+            object_list = Product.objects.filter(name__icontains=search)
+        else:
+            object_list = Product.objects.all()
+        return object_list
 
     class Meta:
         verbose_name = "Product"
