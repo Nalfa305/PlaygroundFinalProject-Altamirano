@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Products Categories
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mt-4">Products categories</h1>
+
+    <div class="mb-4">
+      <form action="" method="get">
+        <input type="text" class="form-control" name="consulta" placeholder="Search Category">
+      </form>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for category in object_list %}
+          <tr>
+            <td>{{ category.name }}</td>
+            <td>
+              <a href="{% url 'product:productcategory_detail' category.id %}" class="btn btn-primary me-2">See</a>
+              <a href="{% url 'product:productcategory_update' category.id %}" class="btn btn-warning me-2">Edit</a>
+              <a href="{% url 'product:productcategory_delete' category.id %}" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="3" class="text-center">No avalible Categories</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

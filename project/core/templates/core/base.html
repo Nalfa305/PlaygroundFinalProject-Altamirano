@@ -17,9 +17,15 @@
         {%include 'core/navbar.html' %}
         <!-- Page content-->
         <div class="container mt-5">
+            {% block title %}
+            
+            {% endblock title %}
             {% block content %}
 
             {% endblock content %}
+
+            {% block pagination %}
+            {% endblock pagination %}
         
             {% include 'core/footer.html'%}
     </body>

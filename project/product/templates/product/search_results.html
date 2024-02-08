@@ -1,18 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
+    
 </head>
 <body>
-    <h1>Search Results</h1>
-    <ul>
-        {% for product in object_list %}
-            <li>{{ product }}</li>
-        {% empty %}
-            <li>No results found.</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                {% block content %}
+                <h1 style="text-align: center; font-size: 35px;">Search Results</h1>
+                {% if object_list %}
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        {% for product in object_list %}
+                            {%include 'product/display_list.html' with product=product %}
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="center" style="width: 100%; text-align: center; font-size: 25px;">No results found.</p>
+                {% endif %}
+                {% endblock content %}
+            </div>
+            <div class="col-lg-4">
+                {% block pagination %}
+                    <!-- Search widget-->
+                    {% include 'core/search.html'%}
+                
+                    <!-- Categories widget-->
+                    {% include 'core/cloth.html'%}
+
+                {% endblock pagination %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>
