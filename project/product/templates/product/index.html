@@ -1,7 +1,63 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}
     Product
 {% endblock title %}
 
+{% block content %}
 
+<body>
+    <div class="row">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            {% for product in products %}
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <div class="card-body p-4"> 
+                            <div class="text-center">
+                                <!-- Product image-->
+                                {% if product.image %}
+                                    <img class="card-img-top" src="{% static '/core/img/' %}{{product.image}}"  alt="No Image Available" width="300" height="200" />
+                                {% else %}
+                                    <img class="card-img-top" src="{% static '/core/img/No_img' %}"  alt="No Image Available" width="300" height="200" />
+                                {% endif %}
+                                <!-- Product name-->
+                                <h5 class="fw-bolder" >{{ product.name }}</h5>
+                                <!-- Product price-->
+                                <p>$ {{ product.price }}</p>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                    </div><div class="row gx-4 gx-lg-5 justify-content-center">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-lg-4">
+            
+            {% include 'core/widgets.html' with Title="NEW HERE? COME AND JOIN US!!" Link="Clients:cliente_create" Text="SIGN IN HERE!" %}
+        
+            <!-- Search widget-->
+            {% include 'core/search.html'%}
+    
+            <!-- Categories widget-->
+            {% include 'core/cloth.html'%}
+    
+            <!-- Side widget - Extra Info-->
+            {% include 'core/widgets.html' with Title='wwww' Sub1='Mix and Match Textures:' Par1='Experiment with textures to add depth and interest to your outfit. Pair a sleek leather jacket with a flowy chiffon skirt or denim with a cozy knit. Mixing textures elevates your look and creates visual intrigue.' Sub2='Accessorize Strategically:' Par2='Accessorizing is an art. Instead of overloading with accessories, focus on a few key pieces that complement your outfit. A statement necklace, bold sunglasses, or a chic belt can transform a simple look into a fashion statement.'%}
+        
+            <!-- Side widget - Contact-->
+            {% include 'core/contact.html'%}
+    
+        </div>
+    </div>
+</body>
+
+
+{% endblock content %}

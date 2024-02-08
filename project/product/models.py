@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+import os
 
 class ProductCategory(models.Model):
     
@@ -36,6 +37,8 @@ class Size(models.Model):
     def __str__(self):
         return str(self.name)   
 
+
+
 class Product(models.Model):
     category_id = models.ManyToManyField(ProductCategory, blank=True, limit_choices_to={'active': True})
     subcategory_id = models.ManyToManyField(ProductSubCategory, blank=True, limit_choices_to={'active': True})
@@ -43,14 +46,16 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True,verbose_name="descripción")
     price = models.FloatField()
     stock = models.IntegerField()
-    image = models.ImageField(null=True, blank=True, upload_to='product/static/product/img')
+    image = models.ImageField(null=True, blank=True, upload_to= "core/static/core/img")
     colour = models.CharField(max_length=100, null=True, blank=True)
     update_date = models.DateField(null=True, blank=True, default=timezone.now, editable=False, verbose_name= "update date")
     size = models.ManyToManyField(Size, blank=True, limit_choices_to={'active': True})
 
+
     def __str__(self) -> str:
         return f"{self.name} ({self.size}) ${self.price:.2f}"
-    
+
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
+        unique_together = ['name', 'price']

@@ -7,11 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>
-            {% block title %}
-                Destiny
-            {% endblock title %}
-        </title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'core/assets/logo.ico' %}" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -24,103 +20,7 @@
             {% block content %}
 
             {% endblock content %}
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Post content-->
-                    <article>
-                        <!-- Post header-->
-                        <header class="mb-4">
-                            <!-- Post title-->
-                            <h1 class="fw-bolder mb-1">Destiny</h1>
-                            <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Offering the best service since 2010</div>
-                            <!-- Post categories-->
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Fashion</a>
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Innovative</a>
-                        </header>
-                        <h2 class="fw-bolder mb-4 mt-5">Our Journey, Your Destiny</h2>
-                        <p class="fs-5 mb-4">Dear friends and fashion fans, As we embark on this sartorial journey together, let me take you back to the roots of Destiny Fashion, where passion, creativity, and a vision for individual expression came together to give rise to a brand that transcends trends.</p>
-                        <!-- Preview image figure-->
-                        <figure class="mb-4">
-                            <img class="img-fluid rounded" src="{% static 'core/img/Ropa.jpg' %}" alt="..." />
-                        </figure>
-
-                        <!-- Post content-->
-                        <section class="mb-5">
-                            <p class="fs-5 mb-4">Today, as we present our latest collections and invite you to explore our offerings, remember that Destiny Fashion is more than just garments; it's an invitation to craft your destiny through style. We welcome you to be part of this ongoing story of creativity, innovation, and the pursuit of individual expression..</p>
-                            <p class="fs-5 mb-4">Join us as we continue to shape the future of fashion and define a destiny where your style takes center stage.</p>
-                        </section>
-                    </article>
-                    <!-- Comments section-->
-                    <section class="mb-5">
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <!-- Comment form-->
-                                <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
-                                <!-- Comment with nested comments-->
-                                <div class="d-flex mb-4">
-                                    <!-- Parent comment-->
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">David L.</div>
-                                        Destiny Fashion provides a seamless online shopping experience. The website is easy to navigate, and the diverse range of styles caters to different tastes. I appreciate the attention to detail in the craftsmanship, making each purchase worthwhile.
-                                        <!-- Child comment 1-->
-                                        <div class="d-flex mt-4">
-                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                            <div class="ms-3">
-                                                <div class="fw-bold">Sophia R.</div>
-                                                David, I've had a different experience. I find the website a bit overwhelming with the vast range of styles. Maybe a more streamlined categorization could help users quickly find what they're looking for.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single comment-->
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Rachel H.</div>
-                                        I've been a long-time customer, and Destiny's commitment to quality is unmatched. However, I've noticed that some popular items go out of stock quickly. It would be great if the brand could address inventory challenges to ensure everyone gets a chance to snag their favorites.
-                                    </div>
-                                </div>
-                                    <!-- Single comment-->
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Alex M.</div>
-                                        Destiny Fashion has become my go-to destination for unique, stylish pieces. The personalized style experience is a game-changer, and I always find something that perfectly suits my taste. Kudos to Destiny for making fashion feel like a personal journey!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- Side widgets-->
-                <div class="col-lg-4">
-                   
-                    {% include 'core/widgets.html' with Title="NEW HERE? COME AND JOIN US!!" Link="Clients:cliente_create" Text="SIGN IN HERE!" %}
-                   
-                    <!-- Search widget-->
-                    {% include 'core/search.html'%}
-
-                    <!-- Categories widget-->
-                    {% include 'core/cloth.html'%}
-
-                    <!-- Side widget - Extra Info-->
-                    {% include 'core/widgets.html' with Title='wwww' Sub1='Mix and Match Textures:' Par1='Experiment with textures to add depth and interest to your outfit. Pair a sleek leather jacket with a flowy chiffon skirt or denim with a cozy knit. Mixing textures elevates your look and creates visual intrigue.' Sub2='Accessorize Strategically:' Par2='Accessorizing is an art. Instead of overloading with accessories, focus on a few key pieces that complement your outfit. A statement necklace, bold sunglasses, or a chic belt can transform a simple look into a fashion statement.'%}
-                   
-                    <!-- Side widget - Contact-->
-                    {% include 'core/contact.html'%}
-
-                </div>
-            </div>
-        </div>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{% static 'core/js/scripts.js' %}"></script>
+        
+            {% include 'core/footer.html'%}
     </body>
 </html>
