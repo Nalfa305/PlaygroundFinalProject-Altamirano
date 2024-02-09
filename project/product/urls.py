@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-from .views import search_results
+from .views import search_results, nothing
 
 app_name = "product"
 
@@ -18,4 +18,5 @@ urlpatterns = [
     path("productsubcategory/detail/<int:pk>", views.ProductSubCategoryDetail.as_view(), name="productsubcategory_detail"),
     path("productsubcategory/update/<int:pk>", views.ProductSubCategoryUpdate.as_view(), name="productsubcategory_update"),
     path("productsubcategory/delete/<int:pk>", views.ProductSubCategoryDelete.as_view(), name="productsubcategory_delete"),
+    path("nothing", nothing, name="nothing"),
 ]

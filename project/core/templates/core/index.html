@@ -10,9 +10,10 @@
     <h1>Final Proyect</h1>
     <h2>Home</h2>
 
-    <button><a href="{% url 'Clients:index' %}">Client</a></button>
-    <button><a href="{% url 'admin:index' %}">Administration</a></button>
-    
+    {%if user.is_staff%}
+        <button><a href="{% url 'Clients:index' %}">Client</a></button>
+        <button><a href="{% url 'admin:index' %}">Administration</a></button>
+    {%endif%}
     
     <body>
         <div class="row">

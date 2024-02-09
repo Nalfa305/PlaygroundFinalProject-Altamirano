@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from . import models
 from .form import *
+from django.http import HttpResponse, HttpRequest
 from .models import ProductCategory, ProductSubCategory, Product
 from django.views.generic import (
     CreateView,
@@ -90,5 +91,6 @@ class ProductSubCategoryDelete(DeleteView):
     model = ProductSubCategory
     success_url = reverse_lazy("product:productsubcategory_list")
 
-
+def nothing(request : HttpRequest) -> HttpResponse:
+    return render(request, "product/nothing.html") 
 

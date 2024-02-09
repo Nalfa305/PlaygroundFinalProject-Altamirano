@@ -52,8 +52,8 @@
                         <p class="fs-5 mb-4">Intente hacer algo lo mas parecido a una tienda de verdad (sin contar el tiempo porque no me va a dar para terminar todo). Saque fotos de internet y las subi en recuadros, cada una con su imagen, precio y talle. Tambien agregue cuantos hay en stock pero eso no lo puse a publico. Se puede crear usuarios y desde un super usuario en administracion poder mover permisos de los otros usuarios. Las prendas tienen un recuadro que es "Add to Cart" el cual  deberia de añadirlo a una lista de items para despues comprarlos, cosa que no me va dar para ninguno de las 2 cosas, menos para vender/comprar porque tengo que investigar como funciona bien el tema de tarjetas y eso con los codigos. Y para la base use una base ya hecha por start bootstrap e intente hacer varios archivos para que fueras ligeros, no por su peso en si sino a la vista, no es lo mismo ver 4 archivos de 15 filas que 1 de 60, te perdes en el medio y estos mismos archivos intente a veces tratar de que fuesen genericos, osea no poner un tecto mismo en el archivo html sino que poner la estructura, y desde afuera cuando lo cargue agregarle el texto que quiero asi se reutiliza como fue el caso de widgets.html  </p>
 
                         <div class="card-footer text-center" style="padding-bottom: 30px;">
-                            <a href='product:index'>Shop Now!</a>
-                            
+                            <a href='{% url 'product:index' %}'>Shop Now!</a>
+                             
                         </div>
                     </article>
                 </div>
