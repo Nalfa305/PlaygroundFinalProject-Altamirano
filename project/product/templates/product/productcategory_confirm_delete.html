@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Confirm Delete
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mt-4">Confirm Delete</h1>
+
+    <div class="card mt-4">
+      <div class="card-body">
+        <h5 class="card-title">Are you sure you want to proceed? "{{ object.name }}"?</h5>
+        <p class="card-text">It cant be undone later.</p>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'product:productcategory_detail' object.id %}" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
